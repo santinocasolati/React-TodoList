@@ -57,15 +57,15 @@ export function App() {
             <TodoList todos={todos} toggleTodo={toggleTodo} />
 
             <div className="new-task">
-                <input className="new-task-name" ref={todoTaskRef} type="text" placeholder="Nueva Tarea" />
+                <input className="new-task-name" ref={todoTaskRef} type="text" placeholder="New Task" />
 
                 <div className="new-task-btns">
                     <button className="new-task-add" onClick={handleTodoAdd}>➕</button>
 
-                    <button className="delete" onClick={handleClear}>BORRAR FINALIZADAS</button>
+                    <button className="delete" onClick={handleClear}>DELETE COMPLETED TASKS</button>
                 </div>
 
-                <span className="tasks-left">Te quedan <span>{todos.filter((todo) => !todo.completed).length}</span> tareas por terminar</span>
+                <span className="tasks-left">You have <span>{todos.filter((todo) => !todo.completed).length}</span> tasks to complete</span>
             </div>
         </Fragment>
     )
