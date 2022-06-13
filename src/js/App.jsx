@@ -7,9 +7,7 @@ const KEY = 'todoApp.todos';
 
 
 export function App() {
-    const [todos, setTodos] = useState([
-        { id: 1, task: "Tarea De Ejemplo", completed: false }
-    ]);
+    const [todos, setTodos] = useState([]);
 
     const todoTaskRef = useRef();
 
@@ -39,8 +37,10 @@ export function App() {
 
         if (task === '') return;
 
+        const uuid = uuidv4().toString();
+
         setTodos((prevTodos) => {
-            return [...prevTodos, { uuidv4, task, completed: false }]
+            return [...prevTodos, { id: uuid, task: task, completed: false }]
         });
 
         todoTaskRef.current.value = null;
@@ -56,13 +56,17 @@ export function App() {
         <Fragment>
             <TodoList todos={todos} toggleTodo={toggleTodo} />
 
-            <input ref={todoTaskRef} type="text" placeholder="Nueva Tarea" />
+            <div className="new-task">
+                <input className="new-task-name" ref={todoTaskRef} type="text" placeholder="Nueva Tarea" />
 
-            <button onClick={handleTodoAdd}>+</button>
+                <div className="new-task-btns">
+                    <button className="new-task-add" onClick={handleTodoAdd}>➕</button>
 
-            <button onClick={handleClear}>-</button>
+                    <button className="delete" onClick={handleClear}>BORRAR FINALIZADAS</button>
+                </div>
 
-            <div>Te quedan {todos.filter((todo) => !todo.completed).length} tareas por terminar</div>
+                <span className="tasks-left">Te quedan <span>{todos.filter((todo) => !todo.completed).length}</span> tareas por terminar</span>
+            </div>
         </Fragment>
     )
 }

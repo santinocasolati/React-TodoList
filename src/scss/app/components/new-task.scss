@@ -1,0 +1,50 @@
+.new-task {
+    position: fixed;
+    top: 50%;
+    right: 25%;
+    transform: translate(50%, -50%);
+    width: 25vw;
+
+    .new-task-name {
+        width: 100%;
+        display: block;
+        background-color: #fff;
+        border: none;
+        color: #000;
+        font-size: 30px;
+        border: 1px solid #ccc;
+    }
+
+    .new-task-btns {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        button {
+            width: 48%;
+            height: 100%;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+    }
+
+    .tasks-left {
+        color: #fff;
+        font-size: 30px;
+        width: 100%;
+        display: block;
+        text-align: center;
+
+        span {
+            color: #adff2f;
+            vertical-align: baseline;
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+@import "app/vars";
+@import "app/fonts";
+
+/* Mixins */
+@import "mixin/respond-to";
+@import "mixin/font-responsive";
+
+/* Core styles */
+@import "core/reset";
+@import "core/mediaqueries";
+
+@import "app/components/todo-list";
+@import "app/components/todo-item";
+@import "app/components/new-task";
+
+body {
+    background-color: #0f0f0f;
+}
+
+html, body, #root {
+    height: 100%;
+}

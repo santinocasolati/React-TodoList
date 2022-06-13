@@ -4,9 +4,10 @@ import { TodoItem } from './TodoItem'
 
 export function TodoList({ todos, toggleTodo }) {
     return (
-        <ul>
+        <ul className='todo-list'>
             {
                 todos.map((todo) => {
+                    console.log(todo.id);
                     return <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
                 })
             }

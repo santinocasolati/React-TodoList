@@ -8,9 +8,10 @@ export function TodoItem({ todo, toggleTodo }) {
     };
 
     return (
-        <li>
+        <li className='todo-item'>
+            <span>{task}</span>
+
             <input type="checkbox" checked={completed} onChange={handleTodoClick} />
-            {task}
         </li>
     )
 }
